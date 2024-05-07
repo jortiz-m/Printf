@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 08:58:40 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/05/07 11:41:35 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/05/07 11:44:13 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ static int	ft_format(char c, va_list lst, int *len)
 	else if (c == 'd' || c == 'i')
 		ft_putnbr(va_arg (lst, int), len);
 	else if (c == 'u')
-
-	else if (c == 'X' || c == 'x')(base 16)
+		ft_putunsignbr(va_arg (lst, int), len);
+	else if (c == 'X' || c == 'x')
 		ft_print_hexa(va_arg (lst, int), len);
 	else if (c == 'p')(puntero hexadecimal)
 
