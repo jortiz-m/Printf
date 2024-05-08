@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_num.c                                           :+:      :+:    :+:   */
+/*   ft_hexapointer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 11:31:50 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/05/07 11:37:52 by jortiz-m         ###   ########.fr       */
+/*   Created: 2024/05/08 12:02:42 by jortiz-m          #+#    #+#             */
+/*   Updated: 2024/05/08 13:49:33 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_putnbr(int n, size_t *cont)
+int	ft_hexapointer(uintptr_t ptr)
 {
-	if (n == -2147483648)
-	{
-		ft_putnbr_pf((n / 10), cont);
-		ft_putchar_pf('8', cont);
-	}
-	else if (n < 0)
-	{
-		ft_putchar_pf('-', cont);
-		ft_putnbr_pf(-n, cont);
-	}
-	else
-	{
-		if (n > 9)
-			ft_putnbr_pf((n / 10), cont);
-		ft_putchar_pf(('0' + n % 10), cont);
-	}
+	size_t	count;
+
+	count = 0;
+	count += write(1, "0x", 2);
+	count += ft_puthex(ptr, 'x');
+	return (count);
 }

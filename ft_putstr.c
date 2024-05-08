@@ -6,21 +6,24 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:22:55 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/05/06 11:27:10 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/05/08 14:03:00 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_putstr(char *lst, int *len)
+int	ft_putstr(char *lst)
 {
 	size_t	i;
+	size_t	count;
 
 	i = 0;
+	count = 0;
 	if (!lst)
 		return ;
 	while (lst[i] != '\0')
 	{
-		ft_putcharlen(lst[i], len);
+		count += ft_putcharlen(lst[i], len);
 	}
+	return (count);
 }

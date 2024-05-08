@@ -6,37 +6,34 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 08:58:40 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/05/07 11:44:13 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:51:05 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_check(char c, va_list *lst, int *len, int *i)
+static int	ft_format(va_list lst, char c )
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	int	totallen;
 
-	else if (tener en cuenta las flags)(c >= '0' && c <= '9')
-}
-
-static int	ft_format(char c, va_list lst, int *len)
-{
+	totallen = 0;
 	if (c == 'c')
-		ft_putchar(va_arg(lst, char), len);
+		totallen += ft_putchar((char)va_arg(lst, int));
 	else if (c == 's')
-		ft_putstr(va_arg (lst, char *), len);
+		totallen += ft_putstr(va_arg (lst, char *));
 	else if (c == 'd' || c == 'i')
-		ft_putnbr(va_arg (lst, int), len);
+		totallen += ft_putnbr(va_arg (lst, int));
 	else if (c == 'u')
-		ft_putunsignbr(va_arg (lst, int), len);
+		totallen += ft_putunsignbr(va_arg (lst, int));
 	else if (c == 'X' || c == 'x')
-		ft_print_hexa(va_arg (lst, int), len);
-	else if (c == 'p')(puntero hexadecimal)
-
+		totallen += ft_puthex(va_arg (lst, unsigned int));
+	else if (c == 'p')
+		totallen += ft_hexapointer(va_arg (lst, unsigned int));
 	else if (c == '%')
-		write (1, '%', 1);
+		totallen += write (1, '%', 1);
 	else
-		"no compatible"(*i)--;
+		return (-1);
+	return (totallen);
 }
 
 int	ft_printf(const char *str, ...)
