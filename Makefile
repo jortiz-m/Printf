@@ -1,7 +1,7 @@
 NAME = libftprintf.a
 
 FUNCTIONS = ft_printf.c ft_putnbr.c ft_puthex.c ft_putunsignbr.c \
-			ft_putcharlen.c ft_putstr.c ft_hexapointer.c \
+			ft_putchar.c ft_putstr.c ft_hexapointer.c \
 
 OBJECT = $(FUNCTIONS:%.c=%.o)
 

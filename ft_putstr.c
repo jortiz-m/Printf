@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:22:55 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/05/08 14:03:00 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:10:32 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@ int	ft_putstr(char *lst)
 
 	i = 0;
 	count = 0;
-	if (!lst)
-		return ;
+	if (lst == NULL)
+		lst = "(null)";
 	while (lst[i] != '\0')
 	{
-		count += ft_putcharlen(lst[i], len);
+		count += ft_putchar(lst[i]);
+		i++;
 	}
 	return (count);
 }

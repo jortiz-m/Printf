@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:27:26 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/05/08 14:03:49 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/05/10 10:19:21 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
 /**
  * @brief 
@@ -33,26 +34,26 @@ int		ft_putnbr(int n);
  * @brief 
  * 
  */
-int		ft_puthex(unsigned long long lst, char format);
+int		ft_puthex(unsigned long long lst);
 /**
  * @brief 
  * 
  */
-void	ft_putunsignbr(unsigned int n, size_t *cont);
+int		ft_putunsignbr(unsigned int n);
 /**
  * @brief 
  * 
  */
-void	ft_putcharlen(char c);
+int		ft_putchar(char c);
 /**
  * @brief 
  * 
  */
-void	ft_putstr(char *lst);
+int		ft_putstr(char *lst);
 /**
  * @brief 
  * 
  */
-void	ft_hexapointer(uintptr_t ptr);
+int		ft_hexapointer(uintptr_t ptr);
 
 #endif

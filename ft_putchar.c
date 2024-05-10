@@ -6,13 +6,13 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:28:48 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/05/08 14:02:45 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/05/10 09:34:49 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putcharlen(char c)
+int	ft_putchar(char c)
 {
 	size_t	count;
 

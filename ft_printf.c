@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 08:58:40 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/05/08 13:51:05 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/05/10 13:16:54 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ static int	ft_format(va_list lst, char c )
 	else if (c == 's')
 		totallen += ft_putstr(va_arg (lst, char *));
 	else if (c == 'd' || c == 'i')
-		totallen += ft_putnbr(va_arg (lst, int));
+		totallen = ft_putnbr(va_arg (lst, int));
 	else if (c == 'u')
-		totallen += ft_putunsignbr(va_arg (lst, int));
+		totallen = ft_putunsignbr(va_arg (lst, int));
 	else if (c == 'X' || c == 'x')
-		totallen += ft_puthex(va_arg (lst, unsigned int));
+		totallen = ft_puthex(va_arg (lst, int));
 	else if (c == 'p')
-		totallen += ft_hexapointer(va_arg (lst, unsigned int));
+		totallen = ft_hexapointer(va_arg (lst, unsigned int));
 	else if (c == '%')
-		totallen += write (1, '%', 1);
+		totallen = write (1, "%", 1);
 	else
 		return (-1);
 	return (totallen);
@@ -42,8 +42,6 @@ int	ft_printf(const char *str, ...)
 	int		i;
 	int		len;
 
-	if (!str)
-		return (0);
 	i = 0;
 	len = 0;
 	va_start(lst, str);
@@ -52,13 +50,14 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			i++;
-			ft_format(str[i], lst, &len);
+			len += ft_format(lst, str[i]);
 			i++;
 		}
 		else
 		{
-			ft_putcharlen((char)str[i], &len);
+			ft_putchar((char)str[i]);
 			i++;
+			len++;
 		}
 	}
 	va_end (lst);
