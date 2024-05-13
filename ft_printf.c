@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 08:58:40 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/05/10 13:16:54 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/05/13 09:36:09 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ static int	ft_format(va_list lst, char c )
 	else if (c == 'u')
 		totallen = ft_putunsignbr(va_arg (lst, int));
 	else if (c == 'X' || c == 'x')
-		totallen = ft_puthex(va_arg (lst, int));
+		totallen = ft_puthex(va_arg (lst, unsigned int), c);
 	else if (c == 'p')
-		totallen = ft_hexapointer(va_arg (lst, unsigned int));
+		totallen = ft_hexapointer(va_arg (lst, uintptr_t));
 	else if (c == '%')
 		totallen = write (1, "%", 1);
 	else

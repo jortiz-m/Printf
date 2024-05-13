@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:27:26 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/05/10 10:19:21 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/05/13 09:36:27 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		ft_putnbr(int n);
  * @brief 
  * 
  */
-int		ft_puthex(unsigned long long lst);
+int		ft_puthex(unsigned long long lst, char c);
 /**
  * @brief 
  * 
