@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:28:48 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/05/13 10:12:41 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/05/13 11:08:28 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 int	ft_putchar(char c)
 {
-	size_t	count;
-
-	count = 0;
-	if (c == '\001' || c == '\002' || c == '\007'
-		|| c == '\v' || c == '\010' || c == '\f' || c == '\r' || c == '\n')
-		return (-1);
-	count += write(1, &c, 1);
-	return (count);
+	return (write(1, &c, 1));
 }

@@ -6,7 +6,11 @@
 		"memory": "c",
 		"printf.h": "c",
 		"unistd.h": "c",
-		"ft_printf.h": "c"
+		"ft_printf.h": "c",
+		"__bit_reference": "c",
+		"algorithm": "c",
+		"chrono": "c",
+		"unordered_map": "c"
 	},
 	"C_Cpp.errorSquiggles": "disabled"
 }

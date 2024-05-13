@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 08:58:40 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/05/13 09:36:09 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/05/13 12:22:29 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_format(va_list lst, char c )
 	else if (c == 'p')
 		totallen = ft_hexapointer(va_arg (lst, uintptr_t));
 	else if (c == '%')
-		totallen = write (1, "%", 1);
+		return (write (1, "%", 1));
 	else
 		return (-1);
 	return (totallen);
