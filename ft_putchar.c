@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:28:48 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/05/13 11:08:28 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/05/15 09:45:24 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 
 int	ft_putchar(char c)
 {
-	return (write(1, &c, 1));
+	int	count;
+
+	count = 0;
+	count += write(1, &c, 1);
+	return (count);
 }
