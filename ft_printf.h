@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 12:27:26 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/05/13 09:36:27 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/05/15 10:05:52 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 
 /**
  * @brief 

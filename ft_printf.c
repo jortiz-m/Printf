@@ -6,7 +6,7 @@
 /*   By: jortiz-m <jortiz-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 08:58:40 by jortiz-m          #+#    #+#             */
-/*   Updated: 2024/05/15 09:49:58 by jortiz-m         ###   ########.fr       */
+/*   Updated: 2024/05/16 09:29:21 by jortiz-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	ft_format(va_list lst, char c )
 	if (c == 'c')
 		totallen = ft_putchar((char)va_arg(lst, int));
 	else if (c == 's')
-		totallen += ft_putstr(va_arg (lst, char *));
+		totallen = ft_putstr(va_arg (lst, char *));
 	else if (c == 'd' || c == 'i')
 		totallen = ft_putnbr(va_arg (lst, int));
 	else if (c == 'u')
@@ -29,14 +29,12 @@ static int	ft_format(va_list lst, char c )
 		totallen = ft_puthex(va_arg (lst, unsigned int), c);
 	else if (c == 'p')
 		totallen = ft_hexapointer(va_arg (lst, uintptr_t));
-	else if (c == '%')
-		return (write (1, "%", 1));
 	else
-		return (-1);
+		return (write (1, "%", 1));
 	return (totallen);
 }
 
-int	ft_check(va_list lst, const char *str, int *i, int *len)
+void	ft_check(va_list lst, const char *str, int *i, int *len)
 {
 	if (str[*i] == '%')
 	{
@@ -50,7 +48,6 @@ int	ft_check(va_list lst, const char *str, int *i, int *len)
 		(*i)++;
 		(*len)++;
 	}
-	return (*len);
 }
 
 int	ft_printf(const char *str, ...)
